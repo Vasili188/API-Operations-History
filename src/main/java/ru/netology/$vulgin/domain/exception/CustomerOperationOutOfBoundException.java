@@ -1,4 +1,4 @@
-package ru.netology.$vulgin.domain;
+package ru.netology.$vulgin.domain.exception;
 
 public class CustomerOperationOutOfBoundException  extends OperationException {
 
