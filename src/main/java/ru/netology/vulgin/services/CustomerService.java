@@ -1,12 +1,10 @@
 package ru.netology.vulgin.services;
 
 import lombok.Getter;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import ru.netology.vulgin.domain.Customer;
 
 import javax.annotation.PostConstruct;
-import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -28,6 +26,9 @@ public class CustomerService {
     public void addCustomer(int id, String name) {
         Customer customer = new Customer(id, name);
         storage.add(customer);
+    }
+    public List<Customer> getCustomers() {
+        return storage;
     }
 
     public Customer getCustomer(int customerId) {

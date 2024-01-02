@@ -2,9 +2,7 @@ package ru.netology.vulgin.services;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
-import ru.netology.vulgin.domain.Customer;
 import ru.netology.vulgin.domain.operations.Currency;
 import ru.netology.vulgin.domain.operations.Operation;
 import ru.netology.vulgin.domain.operations.OperationCreditType;
@@ -47,11 +45,8 @@ public class StatementService {
     public List<Operation> getOperationsFromCustomer(int customerId) {
         return storage.get(customerId);
     }
-    public void removeOperationsOnCustomerId(int id){
-        for(int i: storage.keySet()){
-            if (i == id){
-                storage.remove(i);
-            }
-        }
+    public void removeOperationsOnCustomerId(int id)
+    {
+        storage.remove(id);
     }
 }
